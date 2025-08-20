@@ -8,7 +8,12 @@ ENV NODE_OPTIONS="--max-old-space-size=4096"
 COPY package*.json ./
 RUN npm install
 
+# Accept build arg for Vite env var
+ARG VITE_BASE_URL
+ENV VITE_BASE_URL=$VITE_BASE_URL
+
 COPY . .
+
 RUN npm run build
 
 # Step 2: Serve with lightweight Node.js static server

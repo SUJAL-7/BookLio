@@ -10,8 +10,6 @@ services:
 
   frontend:
     image: sujalsa/booklio-frontend:latest
-    env_file:
-      - .env
     ports:
       - "5174:5174"
     depends_on:
