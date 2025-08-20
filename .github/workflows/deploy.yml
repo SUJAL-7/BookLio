@@ -45,7 +45,7 @@ jobs:
       - name: Deploy on EC2
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << EOF
-            cd ~/booklio
+            cd ~/Booklio
             docker compose pull
             docker compose up -d
           EOF
