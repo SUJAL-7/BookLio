@@ -21,7 +21,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: 'http://3.108.254.28:5174',
+  credentials: true
+}));
 
 const { logger, requestLogger } = require("./middleware/logger");
 app.use(requestLogger);
